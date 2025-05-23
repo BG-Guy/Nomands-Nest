@@ -31,38 +31,38 @@ export const HoverCarouselWrapper: React.FC<HoverCarouselWrapperProps> = ({
       : { transform: "translateX(100%)" }
   }
 
-  const animateStart = async () => {
-    await animate(
-      scope.current,
-      { opacity: 1, top: "120%" },
-      { duration: 0.2, ease: "circInOut" }
-    )
-    await animate(
-      scope.current,
-      { width: "100%", height: 2, left: 0, borderRadius: 0 },
-      { duration: 0.2, ease: "circInOut" }
-    )
-  }
-
-  const animateOut = async () => {
-    await animate(
-      scope.current,
-      {
-        width: 4,
-        height: 4,
-        left: "50%",
-        borderRadius: "100%",
-      },
-      { duration: 0.2, ease: "circInOut" }
-    )
-    await animate(
-      scope.current,
-      { opacity: 0, top: "180%" },
-      { duration: 0.2, ease: "circInOut" }
-    )
-  }
-
   useEffect(() => {
+    const animateStart = async () => {
+      await animate(
+        scope.current,
+        { opacity: 1, top: "120%" },
+        { duration: 0.2, ease: "circInOut" }
+      )
+      await animate(
+        scope.current,
+        { width: "100%", height: 2, left: 0, borderRadius: 0 },
+        { duration: 0.2, ease: "circInOut" }
+      )
+    }
+
+    const animateOut = async () => {
+      await animate(
+        scope.current,
+        {
+          width: 4,
+          height: 4,
+          left: "50%",
+          borderRadius: "100%",
+        },
+        { duration: 0.2, ease: "circInOut" }
+      )
+      await animate(
+        scope.current,
+        { opacity: 0, top: "180%" },
+        { duration: 0.2, ease: "circInOut" }
+      )
+    }
+
     if (!isLink) return
     if (isHover) {
       animateStart()
@@ -70,7 +70,7 @@ export const HoverCarouselWrapper: React.FC<HoverCarouselWrapperProps> = ({
       // Reset animation if needed when hover is removed
       animateOut()
     }
-  }, [isHover, animate, scope, animateOut, animateStart, isLink])
+  }, [isHover, animate, scope, isLink])
 
   return (
     <div className='relative'>
