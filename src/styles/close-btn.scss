@@ -1,0 +1,54 @@
+$diameter: 0.75em;
+$radius: $diameter / 2;
+$border-color: #c2c7cc;
+$border-color-hover: #f26a3d;
+$close-color: #8a9199;
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: $diameter;
+  height: $diameter;
+  border-radius: $diameter;
+
+  border: 1px solid $border-color;
+  color: transparent;
+  cursor: pointer;
+  transition: all ease 0.3s;
+
+  &:before,
+  &:after {
+    position: absolute;
+    width: $radius;
+    height: 1px;
+    left: 50%;
+    top: 50%;
+    margin-left: calc(-#{$radius} / 2);
+
+    content: "";
+    background: $close-color;
+    transition: all ease 1s;
+  }
+
+  &:before {
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    transform: rotate(45deg);
+  }
+
+  &:hover,
+  &:focus {
+    transform: rotate(180deg);
+    border-color: $border-color-hover;
+    background: rgba($border-color-hover, 0.1);
+
+    &:before,
+    &:after {
+      background: red;
+    }
+  }
+}

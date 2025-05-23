@@ -1,0 +1,135 @@
+$breakpoints: (
+  xs: 480px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1536px,
+);
+
+@mixin respond($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' not found in $breakpoints map.";
+  }
+}
+
+.about-section-layout {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  gap: 1rem;
+  padding: 1rem;
+  place-items: center;
+  padding: 64px;
+  // Default: Mobile (1 column)
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 2fr 3fr;
+
+  @include respond(md) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 4fr;
+  }
+
+  // Desktop: 3 columns
+  @include respond(lg) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 4fr;
+  }
+
+  // Widescreen: 4 columns
+  @include respond(xl) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 4fr;
+  }
+}
+
+$dur: 5s; //animation speed
+$curve: cubic-bezier(0.72, 0.31, 0.29, 0.67);
+
+body {
+  background: rgba(254, 249, 231, 1);
+}
+
+a {
+  color: white;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  height: 32em;
+  width: 32em;
+  font-size: 3px;
+  margin: 0 calc(50% - 16em) 0;
+  padding: 9em 8em;
+  background: rgba(254, 249, 231, 0.8);
+  animation: rotate-whole $dur infinite linear;
+  border-radius: 100%;
+}
+
+.block {
+  display: inline-block;
+  height: 14em;
+  width: 4em;
+  // margin: 0 -0.5px 0 0;
+  background: white;
+  mix-blend-mode: difference;
+
+  &.first {
+    transform: translate(6em, -5.5em) rotate(-90deg) scaleX(0.75) scaleY(0.5732);
+    animation: rotate-block-first $dur infinite $curve;
+  }
+
+  &.second {
+    transform: translate(2em, 5.5em) rotate(-90deg) scaleX(0.75) scaleY(0.5732);
+    animation: rotate-block-second $dur infinite $curve;
+  }
+
+  &.thirth {
+    transform: translate(-7.5em, 0) scaleX(0.75) scaleY(0.5732);
+    animation: rotate-block-thirth $dur infinite $curve;
+  }
+
+  &.fourth {
+    transform: translate(-0.5em, 0) scaleX(0.75) scaleY(0.5732);
+    animation: rotate-block-fourth $dur infinite $curve;
+  }
+}
+
+@keyframes rotate-block-first {
+  25%,
+  85%,
+  100% {
+    transform: translate(8em, 0);
+  }
+}
+
+@keyframes rotate-block-second {
+  30%,
+  90%,
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes rotate-block-thirth {
+  35%,
+  95%,
+  100% {
+    transform: translate(-2em, -2em) rotate(90deg);
+  }
+}
+
+@keyframes rotate-block-fourth {
+  40%,
+  100% {
+    transform: translate(-6em, 2em) rotate(90deg);
+  }
+}
+
+@keyframes rotate-whole {
+  to {
+    transform: rotate(179deg);
+  }
+}

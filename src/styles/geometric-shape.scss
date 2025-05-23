@@ -1,0 +1,296 @@
+.truck {
+  width: 612px;
+  height: 612px;
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: -200px;
+  scale: 0.2;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+.box {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  float: right;
+  margin: 1px;
+}
+.box:before {
+  content: "";
+  position: absolute;
+  border-bottom: 51px solid rgba(254, 249, 231, 0.8);
+  border-left: 0 solid transparent;
+  border-right: 0 solid transparent;
+  height: 0;
+  width: 100%;
+  bottom: 0;
+  box-sizing: border-box;
+  animation-name: saskiaeffect;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+.box:after {
+  content: "";
+  position: absolute;
+  border-top: 51px solid rgba(254, 249, 231, 0.5);
+  border-left: 0 solid transparent;
+  border-right: 0 solid transparent;
+  height: 0;
+  width: 100%;
+  top: 0;
+  box-sizing: border-box;
+  animation-name: saskiaeffect;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+@keyframes saskiaeffect {
+  0% {
+    border-left: 0 solid transparent;
+    border-right: 0 solid transparent;
+  }
+  50% {
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+  }
+  100% {
+    border-left: 0 solid transparent;
+    border-right: 0 solid transparent;
+  }
+}
+@-moz-keyframes saskiaeffect {
+  0% {
+    border-left: 0 solid transparent;
+    border-right: 0 solid transparent;
+  }
+  50% {
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+  }
+  100% {
+    border-left: 0 solid transparent;
+    border-right: 0 solid transparent;
+  }
+}
+.truck .box:nth-child(2),
+.truck .box:nth-child(3),
+.truck .box:nth-child(8),
+.truck .box:nth-child(12),
+.truck .box:nth-child(13),
+.truck .box:nth-child(14),
+.truck .box:nth-child(19),
+.truck .box:nth-child(22),
+.truck .box:nth-child(24),
+.truck .box:nth-child(27),
+.truck .box:nth-child(30),
+.truck .box:nth-child(32),
+.truck .box:nth-child(33),
+.truck .box:nth-child(34),
+.truck .box:nth-child(36) {
+  transform: rotate(90deg);
+}
+.truck .box:nth-child(1):after,
+.truck .box:nth-child(5):after,
+.truck .box:nth-child(11):after,
+.truck .box:nth-child(14):after,
+.truck .box:nth-child(16):after,
+.truck .box:nth-child(17):after,
+.truck .box:nth-child(18):after,
+.truck .box:nth-child(19):after,
+.truck .box:nth-child(23):after,
+.truck .box:nth-child(27):after,
+.truck .box:nth-child(30):after,
+.truck .box:nth-child(31):after,
+.truck .box:nth-child(36):after {
+  border-top: 51px solid rgba(254, 249, 231, 0.6);
+}
+.truck .box:nth-child(1):before,
+.truck .box:nth-child(5):before,
+.truck .box:nth-child(11):before,
+.truck .box:nth-child(14):before,
+.truck .box:nth-child(16):before,
+.truck .box:nth-child(17):before,
+.truck .box:nth-child(18):before,
+.truck .box:nth-child(19):before,
+.truck .box:nth-child(23):before,
+.truck .box:nth-child(27):before,
+.truck .box:nth-child(30):before,
+.truck .box:nth-child(31):before,
+.truck .box:nth-child(36):before {
+  border-bottom: 51px solid rgba(254, 249, 231, 0.9);
+}
+.truck .box:nth-child(2):after,
+.truck .box:nth-child(3):after,
+.truck .box:nth-child(4):after,
+.truck .box:nth-child(7):after,
+.truck .box:nth-child(10):after,
+.truck .box:nth-child(13):after,
+.truck .box:nth-child(20):after,
+.truck .box:nth-child(22):after,
+.truck .box:nth-child(26):after,
+.truck .box:nth-child(32):after,
+.truck .box:nth-child(33):after,
+.truck .box:nth-child(35):after {
+  border-top: 51px solid rgba(254, 249, 231, 0.3);
+}
+.truck .box:nth-child(2):before,
+.truck .box:nth-child(3):before,
+.truck .box:nth-child(4):before,
+.truck .box:nth-child(7):before,
+.truck .box:nth-child(10):before,
+.truck .box:nth-child(13):before,
+.truck .box:nth-child(20):before,
+.truck .box:nth-child(22):before,
+.truck .box:nth-child(26):before,
+.truck .box:nth-child(32):before,
+.truck .box:nth-child(33):before,
+.truck .box:nth-child(35):before {
+  border-bottom: 51px solid rgba(254, 249, 231, 0.8);
+}
+.truck .box:nth-child(12):before,
+.truck .box:nth-child(12):after {
+  animation-delay: 0.2s;
+}
+.truck .box:nth-child(18):before,
+.truck .box:nth-child(18):after {
+  animation-delay: 0.4s;
+}
+.truck .box:nth-child(24):before,
+.truck .box:nth-child(24):after {
+  animation-delay: 0.6s;
+}
+.truck .box:nth-child(30):before,
+.truck .box:nth-child(30):after {
+  animation-delay: 0.8s;
+}
+.truck .box:nth-child(5):before,
+.truck .box:nth-child(5):after {
+  animation-delay: 0.3s;
+}
+.truck .box:nth-child(11):before,
+.truck .box:nth-child(11):after {
+  animation-delay: 0.6s;
+}
+.truck .box:nth-child(17):before,
+.truck .box:nth-child(17):after {
+  animation-delay: 0.9s;
+}
+.truck .box:nth-child(23):before,
+.truck .box:nth-child(23):after {
+  animation-delay: 1.2s;
+}
+.truck .box:nth-child(29):before,
+.truck .box:nth-child(29):after {
+  animation-delay: 1.6s;
+}
+.truck .box:nth-child(35):before,
+.truck .box:nth-child(35):after {
+  animation-delay: 1.9s;
+}
+/**/
+.truck .box:nth-child(4):before,
+.truck .box:nth-child(4):after {
+  animation-delay: 0.4s;
+}
+.truck .box:nth-child(10):before,
+.truck .box:nth-child(10):after {
+  animation-delay: 0.8s;
+}
+.truck .box:nth-child(16):before,
+.truck .box:nth-child(16):after {
+  animation-delay: 1.2s;
+}
+.truck .box:nth-child(22):before,
+.truck .box:nth-child(22):after {
+  animation-delay: 1.6s;
+}
+.truck .box:nth-child(28):before,
+.truck .box:nth-child(28):after {
+  animation-delay: 2s;
+}
+.truck .box:nth-child(34):before,
+.truck .box:nth-child(34):after {
+  animation-delay: 2.4s;
+}
+/**/
+.truck .box:nth-child(3):before,
+.truck .box:nth-child(3):after {
+  animation-delay: 0.2s;
+  animation-duration: 3.5s;
+}
+.truck .box:nth-child(9):before,
+.truck .box:nth-child(9):after {
+  animation-delay: 0.4s;
+  animation-duration: 3.5s;
+}
+.truck .box:nth-child(15):before,
+.truck .box:nth-child(15):after {
+  animation-delay: 0.6s;
+  animation-duration: 3.5s;
+}
+.truck .box:nth-child(21):before,
+.truck .box:nth-child(21):after {
+  animation-delay: 0.8s;
+  animation-duration: 3.5s;
+}
+.truck .box:nth-child(27):before,
+.truck .box:nth-child(27):after {
+  animation-delay: 1s;
+  animation-duration: 3.5s;
+}
+.truck .box:nth-child(33):before,
+.truck .box:nth-child(33):after {
+  animation-delay: 1.2s;
+  animation-duration: 3.5s;
+}
+/**/
+.truck .box:nth-child(2):before,
+.truck .box:nth-child(2):after {
+  animation-delay: 0.2s;
+}
+.truck .box:nth-child(8):before,
+.truck .box:nth-child(8):after {
+  animation-delay: 0.4s;
+}
+.truck .box:nth-child(14):before,
+.truck .box:nth-child(14):after {
+  animation-delay: 0.6s;
+}
+.truck .box:nth-child(20):before,
+.truck .box:nth-child(20):after {
+  animation-delay: 0.8s;
+}
+.truck .box:nth-child(26):before,
+.truck .box:nth-child(26):after {
+  animation-delay: 1s;
+}
+.truck .box:nth-child(32):before,
+.truck .box:nth-child(32):after {
+  animation-delay: 1.2s;
+}
+/**/
+.truck .box:nth-child(1):before,
+.truck .box:nth-child(1):after {
+  animation-delay: 0.1s;
+}
+.truck .box:nth-child(7):before,
+.truck .box:nth-child(7):after {
+  animation-delay: 0.2s;
+}
+.truck .box:nth-child(13):before,
+.truck .box:nth-child(13):after {
+  animation-delay: 0.3s;
+}
+.truck .box:nth-child(19):before,
+.truck .box:nth-child(19):after {
+  animation-delay: 0.4s;
+}
+.truck .box:nth-child(25):before,
+.truck .box:nth-child(25):after {
+  animation-delay: 0.5s;
+}
+.truck .box:nth-child(31):before,
+.truck .box:nth-child(31):after {
+  animation-delay: 0.6s;
+}
