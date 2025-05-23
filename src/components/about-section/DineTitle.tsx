@@ -24,7 +24,7 @@ export const DineTeaserTitle: React.FC<DineTeaserTitleProps> = ({
     return () => {
       clearInterval(interval1)
     }
-  }, [index1])
+  }, [index1, words.length])
 
   const renderSlide = ({
     index,

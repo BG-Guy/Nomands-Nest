@@ -14,6 +14,8 @@ export const MenuCategories: React.FC<MenuCategoriesProps> = ({
   selectedCategory,
 }) => {
   const categories = ["Breakfast", "Lunch", "Dinner"]
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
   return (
     <div className={cn("gap-10", className)}>
       {categories.map((item, index) => {
@@ -21,12 +23,16 @@ export const MenuCategories: React.FC<MenuCategoriesProps> = ({
         return (
           <motion.div
             className='WRAPPER relative '
-            onHoverStart={() => setIsHover(true)}
-            onHoverEnd={() => setIsHover(false)}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            key={index}
             onClick={() => handleCategoryClick(item)}>
             <motion.div
               animate={{
-                x: IsHover || selectedCategory === item ? "-100%" : "0",
+                x:
+                  hoveredIndex === index || selectedCategory === item
+                    ? "-100%"
+                    : "0",
                 y: "-20%",
               }}
               transition={{
@@ -40,7 +46,10 @@ export const MenuCategories: React.FC<MenuCategoriesProps> = ({
             </motion.div>
             <motion.div
               animate={{
-                x: IsHover || selectedCategory === item ? "10%" : "0",
+                x:
+                  hoveredIndex === index || selectedCategory === item
+                    ? "10%"
+                    : "0",
               }}
               className='z-10 relative cursor-pointer bg-warmLightOffWhite font-simple-2'>
               {item}

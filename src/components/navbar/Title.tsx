@@ -20,7 +20,7 @@ export const Title: React.FC<TitleProps> = ({ className, navbarColor }) => {
           style={{ color: navbarColor }}
           className='text-center font-title-5 text-header'>
           THE <br />
-          NOMAND'S NEST
+          NOMAND&lsquo;S NEST
         </motion.h1>
       </Link>
     </div>

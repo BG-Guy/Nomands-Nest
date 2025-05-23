@@ -39,7 +39,7 @@ export const DineTeaserInfo: React.FC<DineTeaserInfoProps> = ({
                 Our talented cooking staff sattles for anything other than the
                 best for our residents. Our chefs has been features in cooking
                 books, and has been working for top resturants for many years,
-                trust us, they know what they're doing!
+                trust us, they know what they&apos;re doing!
               </span>
               <Link scroll={false} href={"/dine"}>
                 <CtaBtn msg={"Explore More"} />

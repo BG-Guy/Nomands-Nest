@@ -56,7 +56,7 @@ export const StayTeaser: React.FC<StayTeaserProps> = ({ className }) => {
       clearInterval(interval1)
       clearInterval(interval2)
     }
-  }, [index1, index2])
+  }, [index1, index2, carouselImages.length])
 
   const renderSlide = ({
     index,
