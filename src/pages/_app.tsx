@@ -3,7 +3,6 @@ import "@/styles/index.scss"
 import { AnimatePresence, motion, useScroll } from "framer-motion"
 import type { AppProps } from "next/app"
 import {
-  BackLight,
   GradlRegular,
   WindfallWide,
   AJensonProDisp,
