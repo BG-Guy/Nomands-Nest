@@ -19,7 +19,7 @@ import {
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <motion.div
-      className={` ${AJensonProDisp.variable} ${AvenirBook.variable} ${WindfallWide.variable} ${GradlRegular.variable} ${BackLight.variable} ${RubikMonoOne.variable} ${JosephineSans.variable} ${openSans.variable} ${inter.variable} ${BungeeOutline.variable}`}>
+      className={` ${AJensonProDisp.variable} ${AvenirBook.variable} ${WindfallWide.variable} ${GradlRegular.variable} ${RubikMonoOne.variable} ${JosephineSans.variable} ${openSans.variable} ${inter.variable} ${BungeeOutline.variable}`}>
       <AnimatePresence mode='wait'>
         <Component key={router.route} {...pageProps} />
       </AnimatePresence>
