@@ -55,11 +55,6 @@ export const BungeeOutline = Bungee_Outline({
   style: "normal",
 })
 
-export const BackLight = localFont({
-  src: [{ path: "./BackLight.ttf" }],
-  variable: "--font-back-light",
-})
-
 export const GradlRegular = localFont({
   src: [{ path: "./Gradl-Regular.ttf" }],
   variable: "--font-gradl-regular",
