@@ -19,7 +19,6 @@ export const MenuCategories: React.FC<MenuCategoriesProps> = ({
   return (
     <div className={cn("gap-10", className)}>
       {categories.map((item, index) => {
-        const [IsHover, setIsHover] = useState<boolean>(false)
         return (
           <motion.div
             className='WRAPPER relative '

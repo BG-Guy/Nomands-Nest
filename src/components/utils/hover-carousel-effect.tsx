@@ -70,7 +70,7 @@ export const HoverCarouselWrapper: React.FC<HoverCarouselWrapperProps> = ({
       // Reset animation if needed when hover is removed
       animateOut()
     }
-  }, [isHover, animate, scope])
+  }, [isHover, animate, scope, animateOut, animateStart, isLink])
 
   return (
     <div className='relative'>

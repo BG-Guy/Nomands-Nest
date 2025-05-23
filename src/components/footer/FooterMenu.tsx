@@ -9,19 +9,21 @@ interface FooterMenuProps {
 }
 
 export const FooterMenu: React.FC<FooterMenuProps> = ({ className }) => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
   return (
     <div className={cn("border-black MENU flex px-8 flex-col ", className)}>
       {links.map((item, index) => {
-        const [IsHover, setIsHover] = useState<boolean>(false)
         return (
           <Link scroll={false} href={item.href} key={item.id}>
             <motion.div
               className='WRAPPER relative '
-              onHoverStart={() => setIsHover(true)}
-              onHoverEnd={() => setIsHover(false)}>
+              onMouseEnter={() => setHoveredIndex(index)}
+              key={index}
+              onMouseLeave={() => setHoveredIndex(null)}>
               <motion.div
                 animate={{
-                  x: IsHover ? "-10%" : "100%",
+                  x: hoveredIndex === index ? "-10%" : "100%",
                 }}
                 transition={{
                   type: "spring",
@@ -34,7 +36,7 @@ export const FooterMenu: React.FC<FooterMenuProps> = ({ className }) => {
               </motion.div>
               <motion.div
                 animate={{
-                  x: IsHover ? "10%" : "0",
+                  x: hoveredIndex === index ? "10%" : "0",
                 }}
                 transition={{ ease: "easeOut", duration: 0.3 }}
                 className='z-10 relative cursor-pointer bg-warmLightOffWhite text-black font-simple-2 text-sub-header'>
